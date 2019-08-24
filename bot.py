@@ -23,12 +23,12 @@ async def play (ctx, url):
     voive = client.voice_client_in(server)
     player = await voice.create_ytdl_player(url)
     player_dict[server.id] = player
-    await client.send_message(ctx.message.cannel, "Playing `%s`now" % player.title)
+    await client.send_message(ctx.message.cannel, "Playing `%s` now" % player.title)
     player.start()
     
 
 @client.command(pass_context=True)
-async def stop (ctx):
+async def stop(ctx):
     server = ctx.message.server
     player = player_dict[server.id]
     player.stop()
@@ -37,7 +37,7 @@ async def stop (ctx):
 
 
 @client.command(pass_context=True)
-async def pause (ctx):
+async def pause(ctx):
     server = ctx.message.server
     player = player_dict[server.id]
     player.paused()
@@ -45,7 +45,7 @@ async def pause (ctx):
 
 
 @client.command(pass_context=True)
-async def resume (ctx):
+async def resume(ctx):
     server = ctx.message.server
     player = player_dict[server.id]
     player.resume()
