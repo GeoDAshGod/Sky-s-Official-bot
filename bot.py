@@ -7,7 +7,7 @@ import requests
 import os
 
 client = commands.Bot(command_prefix="r!")
-player_dict - dict()
+player_dict = dict()
 
 
 @client.event
