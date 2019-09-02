@@ -6,7 +6,7 @@ import random
 import requests
 import os
 
-client = commands.Bot(command_prefix="r!")
+client = commands.Bot(command_prefix="+")
 player_dict = dict()
 
 
@@ -16,7 +16,7 @@ async def on_ready():
 
 
 @client.command(pass_context=True)
-async def play (url):
+async def play (ctx, url):
     channel = ctx.message.author.voice_channel
     await client.join_voice_vhannel(channel)
     server = ctx.message.server
